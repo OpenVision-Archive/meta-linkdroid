@@ -26,8 +26,8 @@ SRC_URI = "https://github.com/OpenVisionE2/linux-amlogic-libreelec/archive/amlog
   file://${DTS} \
 "
 
-SRC_URI[md5sum] = ""
-SRC_URI[sha256sum] = ""
+#SRC_URI[md5sum] = ""
+#SRC_URI[sha256sum] = ""
 
 do_configure_prepend(){
     sed -i "s/@DISTRONAME@/${MACHINE}/" "${WORKDIR}/defconfig"
