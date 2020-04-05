@@ -1,5 +1,4 @@
 SUMMARY = "Amlogic player library"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(alien5)$"
 

@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://Makefile;md5=d0d2f45bce10dd67cca4a749d12e535e"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "^(alien5|k1pro|k2pro|k2prov2|k3pro|k1plus|kvim2|c300|c300pro|c400plus|alien4)$"
+COMPATIBLE_MACHINE = "^(alien5|k1pro|k2pro|k2prov2|k3pro|k1plus)$"
 
 SRC_URI[md5sum] = "b849349480679ca6253cf2660e366ec6"
 
@@ -16,7 +16,7 @@ S = "${WORKDIR}/gpu-aml-r6p1-01rel0-2364187/mali"
 
 inherit module
 
-EXTRA_OEMAKE = "CONFIG_MALI400=m CONFIG_MALI450=m KDIR=${STAGING_KERNEL_BUILDDIR}"
+EXTRA_OEMAKE = "CONFIG_MALI400=m CONFIG_MALI450=m CONFIG_MALI470=m KDIR=${STAGING_KERNEL_BUILDDIR}"
 
 do_compile() {
 	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS

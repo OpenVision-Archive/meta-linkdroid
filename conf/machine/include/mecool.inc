@@ -1,5 +1,3 @@
-GST_VERSION = "0.10"
-
 BOX_BRAND = "mecool"
 
 require conf/distro/multilib.inc
@@ -9,7 +7,7 @@ KERNEL_FILE = "kernel.itb"
 ROOTFS_FILE = "rootfs.tar.bz2"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-amlogic"
-PREFERRED_VERSION_linux-amlogic = "3.14.29%"
+PREFERRED_VERSION_linux-amlogic = "3.14.29"
 
 MACHINEKERNEL = "amlogic"
 
@@ -43,24 +41,24 @@ DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    amlogic-shutdown \
     amlogic-autoscript \
+    amlogic-cnim \
+    amlogic-gst-amlavsink1 \
     amlogic-mali \
+    amlogic-shutdown \
+    amlogic-u-boot-fw-utils \
     amremote \
     firmware-ap6xxx-mecool \
-    gst-fluendo-mpegdemux \
     kernel-module-e2-procfs \
     kernel-modules \
     libmad \
+    linkdroid-libavlib-audio-so-alien5 \
     mecool-amlsetfb \
     mecool-dvb-modules-e2procfs \
-    mecool-gst-amlavout \
-    mecool-gst-amlavsink \
-    mecool-gst-app \
-    mecool-libamplayer \
-    mecool-libamavutils \
     mecool-libamadec \
+    mecool-libamavutils \
     mecool-libamcodec \
+    mecool-libamplayer \
     mecool-setup \
     "
 
@@ -83,11 +81,11 @@ PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 DVBMEDIASINK_CONFIG = "--with-wmv --with-pcm --with-eac3 --with-h265 --with-dtsdownmix"
 
 EXTRA_OECONF_append_pn-enigma2 = " --with-alsa --with-alsacard=hw:0 --with-alsamixer=Master --with-fbdev=/dev/fb0 --with-lcddev=/dev/null --with-amlogic"
-DEPENDS_append_pn-enigma2 = " libdvbcsa mecool-libamcodec mecool-libamadec"
+DEPENDS_append_pn-enigma2 = " libdvbcsa mecool-libamcodec mecool-libamadec gstreamer1.0 gstreamer1.0-plugins-base"
 EXTRA_OECONF_append_pn-tuxtxt-enigma2 = " --with-fbdev=/dev/fb0"
 DEPENDS_append_pn-enigma2-plugin-systemplugins-servicemp3 = " mecool-libamcodec "
-CC_append_pn-showiframe = " -DHAVE_AMLOGIC -I${STAGING_INCDIR}/amlogic/amcodec -lamcodec"
-DEPENDS_append_pn-showiframe = " mecool-libamcodec"
+CC_append_pn-showiframe = " -DHAVE_AMLOGIC -I${STAGING_INCDIR}/amlogic/amcodec -lamcodec -lgstpbutils-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0"
+DEPENDS_append_pn-showiframe = " mecool-libamcodec gstreamer1.0 gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
 
 DISTRO_FEATURES_remove = "x11 wayland"
 
@@ -96,6 +94,7 @@ IMAGEDIR ?= "${MACHINE}"
 IMAGE_CMD_amlogicsdimg_append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
     mv ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${IMAGE_NAME}.img; \
+    cp ${DEPLOY_DIR_IMAGE}/${KERNEL_DEVICETREE} ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/dtb.img; \
     echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
     cd ${DEPLOY_DIR_IMAGE}; \

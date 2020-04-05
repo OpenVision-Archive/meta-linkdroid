@@ -6,14 +6,16 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "^(alien5)$"
+COMPATIBLE_MACHINE = "^(alien5|k1pro|k2pro|k2prov2|k3pro|k1plus)$"
 
 inherit lib_package pkgconfig
 
 ### TODO:
 ## cram plugins as did not have time to check which ones provide gst/video headers 
 ## QA still complains about host headers used, does not make any sense
-DEPENDS = " gstreamer1.0 linkdroid-libamcodec-alien5 linkdroid-libamavutils-alien5 gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
+DEPENDS_alien5 = " gstreamer1.0 linkdroid-libamcodec-${MACHINE} linkdroid-libamavutils-${MACHINE} gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
+
+DEPENDS = " gstreamer1.0 mecool-libamcodec mecool-libamavutils gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
 
 
 SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/amlogic-libs/master/gst-aml-plugins-1.0.zip"

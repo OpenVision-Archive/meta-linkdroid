@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus|kvim2|c300|c300pro|c400plus|alien4)$"
+COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus)$"
 
 inherit kernel machine_kernel_pr
 
@@ -54,4 +54,8 @@ do_compile_append() {
     	mkdir -p ${B}/arch/arm64/boot/dts/amlogic/
     	cp ${B}/arch/arm64/boot/dts/amlogic/${KERNEL_DEVICETREE} ${B}/arch/arm64/boot/
     fi
+}
+
+do_install_append() {
+    install -m 644 ${B}/arch/arm64/boot/${KERNEL_DEVICETREE} ${DEPLOY_DIR_IMAGE}/
 }

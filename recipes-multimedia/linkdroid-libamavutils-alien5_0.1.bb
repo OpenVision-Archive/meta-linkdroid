@@ -1,5 +1,4 @@
 SSUMMARY = "Amlogic audio video utils library"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(alien5)$"
 

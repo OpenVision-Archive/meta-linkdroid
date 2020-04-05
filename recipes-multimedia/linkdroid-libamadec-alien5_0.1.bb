@@ -1,5 +1,4 @@
 SUMMARY = "Amlogic audio decoders library"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(alien5)$"
 

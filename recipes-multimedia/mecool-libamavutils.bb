@@ -1,5 +1,4 @@
 SSUMMARY = "Amlogic audio video utils library"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -11,7 +10,7 @@ SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/amlogic-libs/master/li
 SRC_URI[md5sum] = "d2e7dc15302fa64eef54aa67da5f9f34"
 SRC_URI[sha256sum] = "79f2ae9c4be27f016314d6ff21f1264c32a73581e5f7c297a7efda6a4cb2df9b"
 
-COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus|kvim2|c300|c300pro|c400plus|alien4)$"
+COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus)$"
 
 inherit lib_package pkgconfig
 

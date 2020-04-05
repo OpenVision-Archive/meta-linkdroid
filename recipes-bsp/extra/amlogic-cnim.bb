@@ -1,10 +1,9 @@
 DESCRIPTION = "Create NIM sockets"
-MAINTAINER = "mnigma"
 SECTION = "base"
 LICENSE = "proprietary"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "^(alien5)$"
+COMPATIBLE_MACHINE = "^(alien5|k1pro|k2pro|k2prov2|k3pro|k1plus)$"
 
 require conf/license/license-gplv2.inc
 
