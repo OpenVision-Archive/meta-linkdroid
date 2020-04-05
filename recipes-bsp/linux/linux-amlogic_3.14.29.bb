@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus)$"
+COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus|k1plusv2)$"
 
 inherit kernel machine_kernel_pr
 

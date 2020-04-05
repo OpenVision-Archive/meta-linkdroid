@@ -31,4 +31,4 @@ INITSCRIPT_PARAMS = "defaults 08"
 do_rm_work() {
 }
 
-COMPATIBLE_MACHINE = "^(alien5|k1pro|k2pro|k2prov2|k3pro|k1plus)$"
+COMPATIBLE_MACHINE = "^(alien5|k1pro|k2pro|k2prov2|k3pro|k1plus|k1plusv2)$"
