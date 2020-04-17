@@ -105,4 +105,4 @@ IMAGE_CMD_amlogicsdimg_append = "\
     "
 
 # We know about rtc
-require conf/machine/include/build-extras.inc
+MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
