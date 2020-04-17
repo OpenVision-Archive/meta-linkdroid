@@ -1,4 +1,4 @@
-DESCRIPTION = "amlogic power and reboot tools"
+DESCRIPTION = "Amlogic power and reboot tools"
 SECTION = "base"
 LICENSE = "proprietary"
 
