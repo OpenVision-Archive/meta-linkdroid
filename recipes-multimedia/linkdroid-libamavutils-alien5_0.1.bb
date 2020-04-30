@@ -25,7 +25,7 @@ do_install() {
 }
 
 FILES_${PN} = "${includedir}/* ${libdir}/* "
-FILES_${PN}-dev = "/usr/include/*"
+FILES_${PN}-dev = "${incdir}/*"
 
 do_configure() {
 }
