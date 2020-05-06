@@ -5,8 +5,8 @@ LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI[md5sum] = "0f60ae00e4e0787031d61526bf7197f6"
-SRC_URI[sha256sum] = "62e309a3755002e963b8089a172b5e39bddbe3356f33ce39dd12fdb0e3a80055"
+SRC_URI[md5sum] = "f3cef56d3bde44aaa834d481aee68351"
+SRC_URI[sha256sum] = "6baf90658743ffa71e7144c958f8a3e3fca5d240b7783b95d28029a70fb9c16a"
 
 inherit kernel machine_kernel_pr
 
