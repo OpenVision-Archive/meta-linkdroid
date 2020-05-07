@@ -42,13 +42,11 @@ DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     amlogic-autoscript \
-    amlogic-cnim \
     amlogic-gst-amlavsink1 \
     amlogic-mali \
     amlogic-shutdown \
     amlogic-u-boot-fw-utils \
     amremote \
-    firmware-ap6xxx-mecool \
     kernel-module-e2-procfs \
     kernel-modules \
     libmad \
@@ -60,6 +58,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     mecool-libamcodec \
     mecool-libamplayer \
     mecool-setup \
+    rpi-firmwares \
     "
 
 KERNEL_MODULE_AUTOLOAD += "\
