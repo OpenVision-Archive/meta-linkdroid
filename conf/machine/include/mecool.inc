@@ -22,8 +22,6 @@ IMAGE_ROOTFS_SIZE = "476562"
 IMAGE_EXTRA_SPACE = "0"
 IMAGE_OVERHEAD_FACTOR = "1.0"
 
-BB_HASH_IGNORE_MISMATCH = "1"
-
 # Serial console to be used
 SERIAL_CONSOLE = "115200 ttyS0"
 
@@ -35,7 +33,7 @@ UBOOT_LOADADDRESS = "0x01080000"
 
 INITRAMFS_IMAGE = "amlogic-initramfs"
 
-MACHINE_FEATURES = "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma nofhdskin multilib"
+MACHINE_FEATURES = "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma multilib"
 
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
