@@ -5,8 +5,8 @@ LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI[md5sum] = "190a0ffd5c7b392846887d4dd7fb191f"
-SRC_URI[sha256sum] = "44ecae37b8c66313bca43e4c520d6be0f9e52df1310fe413ab0062f410efe42a"
+SRC_URI[md5sum] = "7bea51e2a4b8e88f2ba48b48b3260c1f"
+SRC_URI[sha256sum] = "db8c1222349000d87d268af1e6e54f1abc73943ff1d6899f0ffe352ee285cada"
 
 inherit kernel machine_kernel_pr
 
@@ -17,7 +17,6 @@ INHIBIT_PACKAGE_STRIP = "1"
 INHIBIT_PACKAGE_DEBUG_STRIP = "1"
 LINUX_VERSION ?= "3.14.29"
 LINUX_VERSION_EXTENSION ?= "amlogic"
-LOCALVERSION ?= ""
 
 COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus|k1plusv2)$"
 
