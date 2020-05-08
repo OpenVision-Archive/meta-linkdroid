@@ -1,4 +1,4 @@
-SUMMARY = "Mecool e2-procfs for ${MACHINE}"
+SUMMARY = "e2-procfs for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "GPLv2"
@@ -20,6 +20,12 @@ S = "${WORKDIR}/git/source/e2_procfs"
 inherit module machine_kernel_pr gitpkgv
 
 EXTRA_OEMAKE = "KSRC=${STAGING_KERNEL_BUILDDIR}"
+
+do_configure_prepend(){
+    sed -i "s/@kxpro@/${MACHINE}/" "${S}/e2_procfs_info.c"
+    sed -i "s/@Mecool@/${BOX_BRAND}/" "${S}/e2_procfs_info.c"
+    sed -i "s/@Amlogic@/${SOC_FAMILY}/" "${S}/e2_procfs_info.c"
+}
 
 do_compile() {
 	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
