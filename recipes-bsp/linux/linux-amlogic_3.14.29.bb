@@ -5,8 +5,8 @@ LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI[md5sum] = "7bea51e2a4b8e88f2ba48b48b3260c1f"
-SRC_URI[sha256sum] = "db8c1222349000d87d268af1e6e54f1abc73943ff1d6899f0ffe352ee285cada"
+SRC_URI[md5sum] = "190a0ffd5c7b392846887d4dd7fb191f"
+SRC_URI[sha256sum] = "44ecae37b8c66313bca43e4c520d6be0f9e52df1310fe413ab0062f410efe42a"
 
 inherit kernel machine_kernel_pr
 
@@ -23,27 +23,15 @@ COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus|k1plusv2)$"
 S = "${WORKDIR}/linux-amlogic-coreelec-amlogic-3.14-nougat"
 B = "${WORKDIR}/build"
 
-DEFCONFIG = "mecool"
-
 DTS = "${@ d.getVar('KERNEL_DEVICETREE').replace('.dtb','.dts') }"
 
 SRC_URI = "https://github.com/OpenVisionE2/linux-amlogic-coreelec/archive/amlogic-3.14-nougat.tar.gz \
+  file://defconfig \
   file://${OPENVISION_BASE}/openvision-oe/recipes-linux/kernel-patches/kernel-add-support-for-gcc6.patch \
 "
 
-kernel_conf_variable() {
-    CONF_SED_SCRIPT="$CONF_SED_SCRIPT /CONFIG_$1[ =]/d;"
-    if test "$2" = "n"
-    then
-        echo "# CONFIG_$1 is not set" >> ${B}/.config
-    else
-        echo "CONFIG_$1=$2" >> ${B}/.config
-    fi
-}
-
 do_configure_prepend(){
-    sed -i "s/@DISTRONAME@/${MACHINE}/" "${S}/arch/arm64/configs/mecool_defconfig"
-    #kernel_conf_variable WETEK m
+    sed -i "s/@DISTRONAME@/${MACHINE}/" "${WORKDIR}/defconfig"
 }
 
 do_compile_append() {
