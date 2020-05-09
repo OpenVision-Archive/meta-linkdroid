@@ -31,8 +31,19 @@ SRC_URI = "https://github.com/OpenVisionE2/linux-amlogic-coreelec/archive/amlogi
   file://${OPENVISION_BASE}/openvision-oe/recipes-linux/kernel-patches/kernel-add-support-for-gcc6.patch \
 "
 
+kernel_conf_variable() {
+    CONF_SED_SCRIPT="$CONF_SED_SCRIPT /CONFIG_$1[ =]/d;"
+    if test "$2" = "n"
+    then
+        echo "# CONFIG_$1 is not set" >> ${B}/.config
+    else
+        echo "CONFIG_$1=$2" >> ${B}/.config
+    fi
+}
+
 do_configure_prepend(){
     sed -i "s/@DISTRONAME@/${MACHINE}/" "${S}/arch/arm64/configs/mecool_defconfig"
+    #kernel_conf_variable WETEK m
 }
 
 do_compile_append() {
