@@ -39,7 +39,6 @@ DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    amlogic-gst-amlavsink1 \
     amlogic-mali \
     amlogic-shutdown \
     amremote \
@@ -47,6 +46,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     libmad \
     linkdroid-amlsetfb \
     linkdroid-autoscript \
+    linkdroid-gst-amlavsink1 \
     linkdroid-libamadec-${MACHINE} \
     linkdroid-libamavutils-${MACHINE} \
     linkdroid-libamcodec-${MACHINE} \

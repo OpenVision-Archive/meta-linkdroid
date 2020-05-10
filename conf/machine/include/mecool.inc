@@ -40,7 +40,6 @@ DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     amlogic-autoscript \
-    amlogic-gst-amlavsink1 \
     amlogic-mali \
     amlogic-shutdown \
     amlogic-u-boot-fw-utils \
@@ -48,13 +47,23 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     kernel-module-e2-procfs \
     kernel-modules \
     libmad \
-    linkdroid-libavlib-audio-so-alien5 \
     mecool-amlsetfb \
+    mecool-gst-amlavsink1 \
     mecool-dvb-modules-e2procfs \
+    mecool-libadpcm \
     mecool-libamadec \
     mecool-libamavutils \
     mecool-libamcodec \
     mecool-libamplayer \
+    mecool-libamr \
+    mecool-libape \
+    mecool-libcook \
+    mecool-libfaad \
+    mecool-libflac \
+    mecool-liblpcm \
+    mecool-libmad \
+    mecool-libpcm \
+    mecool-libraac \
     mecool-setup \
     rpi-firmwares \
     "
@@ -77,6 +86,7 @@ PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 
 DVBMEDIASINK_CONFIG = "--with-wmv --with-pcm --with-eac3 --with-h265 --with-dtsdownmix"
 
+CC_append_pn-enigma2 = " -I${STAGING_INCDIR}/amlogic/amcodec -lamcodec"
 EXTRA_OECONF_append_pn-enigma2 = " --with-alsa --with-alsacard=hw:0 --with-alsamixer=Master --with-fbdev=/dev/fb0 --with-lcddev=/dev/null --with-amlogic"
 DEPENDS_append_pn-enigma2 = " libdvbcsa mecool-libamcodec mecool-libamadec gstreamer1.0 gstreamer1.0-plugins-base"
 EXTRA_OECONF_append_pn-tuxtxt-enigma2 = " --with-fbdev=/dev/fb0"

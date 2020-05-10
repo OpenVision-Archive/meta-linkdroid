@@ -1,18 +1,8 @@
-SSUMMARY = "Amlogic audio video utils library"
+SUMMARY = "Amlogic audio video utils library"
 
-LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+require mecool-lib.inc
 
-S = "${WORKDIR}/libamcodec-210755d/amavutils"
-
-SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/amlogic-libs/master/libamcodec-210755d.tar.gz"
-
-SRC_URI[md5sum] = "d2e7dc15302fa64eef54aa67da5f9f34"
-SRC_URI[sha256sum] = "79f2ae9c4be27f016314d6ff21f1264c32a73581e5f7c297a7efda6a4cb2df9b"
-
-COMPATIBLE_MACHINE = "^(k1pro|k2pro|k2prov2|k3pro|k1plus|k1plusv2)$"
-
-inherit lib_package pkgconfig
+S = "${WORKDIR}/libamcodec-openvision/amavutils"
 
 EXTRA_OEMAKE = "\
     'CC=${CC}' \
@@ -21,15 +11,18 @@ EXTRA_OEMAKE = "\
 "
 
 do_install() {
-    install -d ${D}${includedir}
+    install -d ${D}${includedir}/amavutils
+    install -m 0755 ${S}/include/*.h ${D}${includedir}/amavutils
+
+    install -d ${D}${includedir}/amavutils/cutils
+    install -m 0755 ${S}/include/cutils/*.h ${D}${includedir}/amavutils/cutils
+
+    install -d ${D}${includedir}/amlogic/amavutils
+    install -m 0755 ${S}/include/*.h ${D}${includedir}/amlogic/amavutils
+
+    install -d ${D}${includedir}/amlogic/amavutils/cutils
+    install -m 0755 ${S}/include/cutils/*.h ${D}${includedir}/amlogic/amavutils/cutils
+
     install -d ${D}${libdir}
-    cp -PR ${S}/include ${D}/usr
-    install -m 0755 ${S}/libamavutils.so ${D}/${libdir}
-}
-
-FILES_${PN} = "${includedir}/* ${libdir}/* "
-FILES_${PN}-dev = "${incdir}/*"
-FILES_${PN}-src = ""
-
-do_package_qa() {
+    install -m 0755 ${S}/*.so ${D}${libdir}
 }
