@@ -39,61 +39,61 @@ DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    amlogic-mali \
-    amlogic-shutdown \
-    amremote \
-    kernel-modules \
-    libmad \
-    linkdroid-amlsetfb \
-    linkdroid-autoscript \
-    linkdroid-gst-amlavsink1 \
-    linkdroid-libamadec-${MACHINE} \
-    linkdroid-libamavutils-${MACHINE} \
-    linkdroid-libamcodec-${MACHINE} \
-    linkdroid-libamplayer-${MACHINE} \
-    linkdroid-libavlib-audio-so-${MACHINE} \
-    linkdroid-dvb-modules-${MACHINE} \
-    linkdroid-extra-${MACHINE} \
-    "
+	amlogic-mali \
+	amlogic-shutdown \
+	amremote \
+	kernel-modules \
+	libmad \
+	linkdroid-amlsetfb \
+	linkdroid-autoscript \
+	linkdroid-gst-amlavsink1 \
+	linkdroid-libamadec-${MACHINE} \
+	linkdroid-libamavutils-${MACHINE} \
+	linkdroid-libamcodec-${MACHINE} \
+	linkdroid-libamplayer-${MACHINE} \
+	linkdroid-libavlib-audio-so-${MACHINE} \
+	linkdroid-dvb-modules-${MACHINE} \
+	linkdroid-extra-${MACHINE} \
+	"
 	
 KERNEL_MODULE_AUTOLOAD += "\
-    se2io_se \
-    ampanel \
-    a5stb \
-    mali \
-    rfcomm \
-    hidp \
-    bluetooth \
-    6lowpan-iphc \
-    libcrc32c \
-    mceusb \
-    rc-core \
-    cfg80211 \
-    8189es \
-"
+	se2io_se \
+	ampanel \
+	a5stb \
+	mali \
+	rfcomm \
+	hidp \
+	bluetooth \
+	6lowpan-iphc \
+	libcrc32c \
+	mceusb \
+	rc-core \
+	cfg80211 \
+	8189es \
+	"
 
 ### TODO:     8189es builitin with cfg80211
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-    kernel-module-cdfs \
-    kernel-module-sysfillrect \
-    kernel-module-syscopyarea \
-    kernel-module-mceusb \
-    kernel-module-rc-core \
-    kernel-module-CH341 \
-    kernel-module-rfcomm \
-    kernel-module-hidp \
-    kernel-module-bluetooth \
-    kernel-module-6lowpan-iphc \
-    kernel-module-libcrc32c \
-    kernel-module-xfs \
-    kernel-module-8189es \
-    kernel-module-cfg80211 \
-    "
+	kernel-module-cdfs \
+	kernel-module-sysfillrect \
+	kernel-module-syscopyarea \
+	kernel-module-mceusb \
+	kernel-module-rc-core \
+	kernel-module-CH341 \
+	kernel-module-rfcomm \
+	kernel-module-hidp \
+	kernel-module-bluetooth \
+	kernel-module-6lowpan-iphc \
+	kernel-module-libcrc32c \
+	kernel-module-xfs \
+	kernel-module-8189es \
+	kernel-module-cfg80211 \
+	"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
-    linkdroid-lkdosth \
-    amlogic-cnim \
-    "
+	linkdroid-lkdosth \
+	amlogic-cnim \
+	"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"

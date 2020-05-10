@@ -11,8 +11,8 @@ RDEPENDS_${PN} = "ffmpeg"
 
 EXTRA_OEMAKE = "\
     'CC=${CC}' \
-    'CFLAGS=-O2 -fPIC -pthread -DALSA_OUT -DENABLE_WAIT_FORMAT -I${S}/include -I${S}' \
-    'LDFLAGS=-shared -lamavutils -lpthread -lm -lasound -lrt -ldl' \
+    'CFLAGS=-fPIC -DALSA_OUT -DENABLE_WAIT_FORMAT -I${S}/include -I${S}' \
+    'LDFLAGS=-shared -lamavutils -lasound' \
 "
 
 do_install() {

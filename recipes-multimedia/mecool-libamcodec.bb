@@ -11,8 +11,8 @@ RDEPENDS_${PN} = "mecool-libamadec"
 
 EXTRA_OEMAKE = " \
     'CC=${CC}' \
-    'CFLAGS=-O2 -fPIC -I${S}/include -I${S} -I${S}/codec -I${STAGING_INCDIR}/amlogic/amadec' \
-    'LDFLAGS=-lamadec -lm -lc -shared -Wl,--shared -Wl,-soname,libamcodec.so' \
+    'CFLAGS=-fPIC -I${S}/include -I${S} -I${S}/codec -I${STAGING_INCDIR}/amlogic/amadec' \
+    'LDFLAGS=-lamadec -shared' \
 "
 
 do_install() {

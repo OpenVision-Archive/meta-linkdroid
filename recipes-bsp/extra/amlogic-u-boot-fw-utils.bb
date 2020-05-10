@@ -14,9 +14,10 @@ PE = "1"
 # repo during parse
 SRCREV = "a705ebc81b7f91bbd0ef7c634284208342901149"
 
-SRC_URI = "git://git.denx.de/u-boot.git"
-
-SRC_URI += "file://default-gcc.patch"
+SRC_URI = "git://git.denx.de/u-boot.git \
+	file://default-gcc.patch \
+	file://fw_env.config \
+	"
 
 S = "${WORKDIR}/git"
 
@@ -35,7 +36,7 @@ do_install () {
 	install -m 755 ${S}/tools/env/fw_printenv ${D}${sbindir}/fw_printenv
 	install -m 755 ${S}/tools/env/fw_printenv ${D}${sbindir}/fw_setenv
 	install -d ${D}${sysconfdir}
-	echo "" >> ${D}${sysconfdir}/fw_env.config
+	install -m 755 ${WORKDIR}/fw_env.config ${D}${sysconfdir}/
 }
 
 FILES_${PN} = "${sysconfdir} ${sbindir}"

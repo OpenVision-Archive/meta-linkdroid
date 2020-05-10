@@ -39,47 +39,47 @@ DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    amlogic-autoscript \
-    amlogic-mali \
-    amlogic-shutdown \
-    amlogic-u-boot-fw-utils \
-    amremote \
-    kernel-module-e2-procfs \
-    kernel-modules \
-    libmad \
-    mecool-amlsetfb \
-    mecool-gst-amlavsink1 \
-    mecool-dvb-modules-e2procfs \
-    mecool-libadpcm \
-    mecool-libamadec \
-    mecool-libamavutils \
-    mecool-libamcodec \
-    mecool-libamplayer \
-    mecool-libamr \
-    mecool-libape \
-    mecool-libcook \
-    mecool-libfaad \
-    mecool-libflac \
-    mecool-liblpcm \
-    mecool-libmad \
-    mecool-libpcm \
-    mecool-libraac \
-    mecool-setup \
-    rpi-firmwares \
-    "
+	amlogic-autoscript \
+	amlogic-mali \
+	amlogic-shutdown \
+	amlogic-u-boot-fw-utils \
+	amremote \
+	kernel-module-e2-procfs \
+	kernel-modules \
+	libmad \
+	mecool-amlsetfb \
+	mecool-gst-amlavsink1 \
+	mecool-dvb-modules-e2procfs \
+	mecool-libadpcm \
+	mecool-libamadec \
+	mecool-libamavutils \
+	mecool-libamcodec \
+	mecool-libamplayer \
+	mecool-libamr \
+	mecool-libape \
+	mecool-libcook \
+	mecool-libfaad \
+	mecool-libflac \
+	mecool-liblpcm \
+	mecool-libmad \
+	mecool-libpcm \
+	mecool-libraac \
+	mecool-setup \
+	rpi-firmwares \
+	"
 
 KERNEL_MODULE_AUTOLOAD += "\
-    e2_procfs \
-    mali \
-    dhd \
-    aml \
-    aml_fe \
-    avl6862 \
-    r848a \
-    sysfillrect \
-    syscopyarea \
-    CH341 \
-"
+	e2_procfs \
+	mali \
+	dhd \
+	aml \
+	aml_fe \
+	avl6862 \
+	r848a \
+	sysfillrect \
+	syscopyarea \
+	CH341 \
+	"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"

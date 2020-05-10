@@ -22,9 +22,9 @@ SRC_URI[sha256sum] = "1b1c6ffc7f5712393a115bfe447b224b3404628c8cd5e06647de04ab5c
 
 S = "${WORKDIR}/gst-aml-plugins-1.0"
 
-CFLAGS += " -O2 -fPIC -I${S}/common/include -I${S}/common/include/amcodec/amports -I${S}/common/include/amcodec/ppmgr \
+CFLAGS += " -fPIC -I${S}/common/include -I${S}/common/include/amcodec/amports -I${S}/common/include/amcodec/ppmgr \
     -I${STAGING_INCDIR} -I${S}/common/amstreaminfo -I${S}/common/amlsysctl "
-LDFLAGS =+ " -L${STAGING_LIBDIR} -L${STAGING_BASELIBDIR} "
+LDFLAGS += " -L${STAGING_LIBDIR} -L${STAGING_BASELIBDIR} "
 
 FILES_${PN} += "${libdir}/* ${libdir}/libcommon.a"
 FILES_${PN}-dbg += "${libdir}/gstreamer-1.0/.debug $"
@@ -33,5 +33,4 @@ FILES_${PN}-dev += "${S}/include/* "
 do_package_qa() {
 }
 
-export KCFLAGS = "-Wno-error=implicit-function-declaration \
-                  "
+export KCFLAGS = "-Wno-error=implicit-function-declaration"

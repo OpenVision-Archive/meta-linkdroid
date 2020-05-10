@@ -14,7 +14,7 @@ EXTRA_OEMAKE = "\
     'LD=${LD}' \
     'CFLAGS=-fPIC -DENABLE_FREE_SCALE -I${S}/include -I${S}/../amffmpeg -I${S}/player \
     -I${S}/player/include -I${S} -I${STAGING_INCDIR}/amlogic/amcodec' \
-    'LDFLAGS=-lamadec -lm -lc -shared -Wl,--shared ' \
+    'LDFLAGS=-lamadec -shared' \
 "
 
 do_install() {

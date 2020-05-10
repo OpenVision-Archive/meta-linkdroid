@@ -6,8 +6,8 @@ S = "${WORKDIR}/libamcodec-openvision/amavutils"
 
 EXTRA_OEMAKE = "\
     'CC=${CC}' \
-    'CFLAGS=-O2 -fPIC -DALSA_OUT -DENABLE_WAIT_FORMAT -I${S}/../amcodec/include -I${S}/include -I${S}' \
-    'LDFLAGS=-shared -lm -lrt' \
+    'CFLAGS=-fPIC -DALSA_OUT -DENABLE_WAIT_FORMAT -I${S}/../amcodec/include -I${S}/include -I${S}' \
+    'LDFLAGS=-shared' \
 "
 
 do_install() {
