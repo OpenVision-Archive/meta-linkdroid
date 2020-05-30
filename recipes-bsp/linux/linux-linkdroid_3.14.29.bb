@@ -9,7 +9,7 @@ COMPATIBLE_MACHINE = "^(alien5)$"
 
 DEPENDS = "lzop-native virtual/${TARGET_PREFIX}gcc"
 
-inherit kernel machine_kernel_pr
+inherit kernel machine_kernel_pr samba_change_dialect
 
 LOCALVERSION ?= ""
 SRCDATE = "20181012"
