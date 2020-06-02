@@ -54,6 +54,15 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	linkdroid-libavlib-audio-so-${MACHINE} \
 	linkdroid-dvb-modules-${MACHINE} \
 	linkdroid-extra-${MACHINE} \
+	kernel-module-mceusb \
+	kernel-module-rc-core \
+	kernel-module-rfcomm \
+	kernel-module-hidp \
+	kernel-module-bluetooth \
+	kernel-module-6lowpan-iphc \
+	kernel-module-libcrc32c \
+	kernel-module-8189es \
+	kernel-module-cfg80211 \
 	"
 	
 KERNEL_MODULE_AUTOLOAD += "\
@@ -74,20 +83,9 @@ KERNEL_MODULE_AUTOLOAD += "\
 
 ### TODO:     8189es builitin with cfg80211
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-	kernel-module-cdfs \
 	kernel-module-sysfillrect \
 	kernel-module-syscopyarea \
-	kernel-module-mceusb \
-	kernel-module-rc-core \
 	kernel-module-CH341 \
-	kernel-module-rfcomm \
-	kernel-module-hidp \
-	kernel-module-bluetooth \
-	kernel-module-6lowpan-iphc \
-	kernel-module-libcrc32c \
-	kernel-module-xfs \
-	kernel-module-8189es \
-	kernel-module-cfg80211 \
 	"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
