@@ -19,7 +19,7 @@ SRC_URI[sha256sum] = "21b281fc26a15a5397083049e9e0805c8e62c68f733a3aee6ddb45533f
 
 SRC_URI += "http://source.mynonpublic.com/linkdroid/linux-${PV}-${SRCDATE}.tar.gz \
     file://defconfig \
-    file://${OPENVISION_BASE}/openvision-oe/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
     file://${MACHINE}.dts \
 "
 
