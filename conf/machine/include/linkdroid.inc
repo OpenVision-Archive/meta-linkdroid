@@ -85,7 +85,7 @@ KERNEL_MODULE_AUTOLOAD += "\
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
 	kernel-module-sysfillrect \
 	kernel-module-syscopyarea \
-	kernel-module-CH341 \
+	kernel-module-ch341 \
 	"
 
 MACHINE_EXTRA_RRECOMMENDS += "\

@@ -78,7 +78,7 @@ KERNEL_MODULE_AUTOLOAD += "\
 	r848a \
 	sysfillrect \
 	syscopyarea \
-	CH341 \
+	ch341 \
 	"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
