@@ -19,8 +19,6 @@ SRC_URI = "file://alien5-extra-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
-inherit module
-
 do_compile() {
 }
 
@@ -32,3 +30,5 @@ do_install() {
 
 do_package_qa() {
 }
+
+FILES_${PN} += "${base_libdir}/modules/${KV}/extra"

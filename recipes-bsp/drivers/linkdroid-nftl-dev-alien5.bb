@@ -21,8 +21,6 @@ S = "${WORKDIR}"
 
 INHIBIT_PACKAGE_STRIP = "1"
 
-inherit module
-
 do_compile() {
 }
 
@@ -34,6 +32,7 @@ do_install () {
 }
 
 FILES_${PN} += "${sysconfdir}/modules-load.d/amlnftldev.conf"
+FILES_${PN} += "${base_libdir}/modules/${KV}/extra"
 
 do_package_qa() {
 }
