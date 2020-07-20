@@ -33,7 +33,7 @@ UBOOT_LOADADDRESS = "0x01080000"
 
 INITRAMFS_IMAGE = "amlogic-initramfs"
 
-MACHINE_FEATURES = "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma multilib"
+MACHINE_FEATURES = "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma multilib HDMI AV_JACK"
 
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
@@ -89,7 +89,7 @@ DEPENDS_append_pn-enigma2-plugin-systemplugins-servicemp3 = " linkdroid-libamcod
 CC_append_pn-showiframe = " -DHAVE_AMLOGIC -I${STAGING_INCDIR}/amlogic/amcodec -lamcodec -lgstpbutils-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0"
 DEPENDS_append_pn-showiframe = " linkdroid-libamcodec-${MACHINE} gstreamer1.0 gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
 
-DISTRO_FEATURES_remove = "x11 wayland"
+DISTRO_FEATURES_remove += "x11 wayland"
 
 IMAGE_CMD_amlogicsdimg_append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
