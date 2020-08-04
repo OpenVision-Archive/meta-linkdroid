@@ -2,6 +2,10 @@ BOX_BRAND = "linkdroid"
 
 require conf/distro/multilib.inc
 
+SOC_FAMILY = "aml905d"
+
+KERNEL_DEVICETREE = "alien5.dtb"
+
 MTD_BLACK  = "mmcblk0"
 KERNEL_FILE = "kernel.itb"
 ROOTFS_FILE = "rootfs.tar.bz2"
@@ -105,3 +109,5 @@ IMAGE_CMD_amlogicsdimg_append = "\
 
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
+
+EXTRA_ALSA = "aml905d"
