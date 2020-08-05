@@ -206,10 +206,10 @@ fitimage_assemble() {
 	fitimage_emit_section_maint ${1} sectend
 
 	fitimage_emit_section_maint ${1} fitend
-	if [ ! -e "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}.rootfs.cpio.gz" ]; then
-#    ln -s "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}.cpio.gz"  "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}.rootfs.cpio.gz" 
+	if [ ! -e "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}${IMAGE_NAME_SUFFIX}.cpio.gz" ]; then
+#    ln -s "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}.cpio.gz"  "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}${IMAGE_NAME_SUFFIX}.cpio.gz" 
 		mkdir -p "${DEPLOY_DIR_IMAGE}"
-		ln -sf "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}.rootfs.cpio.gz"  "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}.cpio.gz" 
+		ln -sf "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}${IMAGE_NAME_SUFFIX}.cpio.gz"  "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}.cpio.gz" 
 	fi
 	uboot-mkimage \
 		${@'-D "${UBOOT_MKIMAGE_DTCOPTS}"' if len('${UBOOT_MKIMAGE_DTCOPTS}') else ''} \
