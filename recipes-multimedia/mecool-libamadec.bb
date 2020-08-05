@@ -38,4 +38,4 @@ do_install() {
     install -m 0755 ${S}/*.so ${D}${libdir}
 }
 
-FILES_${PN} += " ${nonarch_base_libdir}/firmware"
+FILES_${PN} += "${nonarch_base_libdir}/firmware"
