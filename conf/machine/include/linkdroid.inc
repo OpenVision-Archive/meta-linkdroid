@@ -1,3 +1,5 @@
+KERNELVERSION = "3.14.29"
+
 BOX_BRAND = "linkdroid"
 
 require conf/distro/multilib.inc
@@ -11,7 +13,7 @@ KERNEL_FILE = "kernel.itb"
 ROOTFS_FILE = "rootfs.tar.bz2"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-linkdroid"
-PREFERRED_VERSION_linux-linkdroid = "3.14.29"
+PREFERRED_VERSION_linux-linkdroid = "${KERNELVERSION}"
 
 MACHINEKERNEL = "linkdroid"
 

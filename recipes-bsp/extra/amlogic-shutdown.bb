@@ -4,7 +4,6 @@ LICENSE = "proprietary"
 
 require conf/license/license-gplv2.inc
 
-PV = "1.0"
 
 SRC_URI = " file://shutdown.sh \
     file://amlreboot \

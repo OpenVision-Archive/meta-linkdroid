@@ -1,3 +1,5 @@
+KERNELVERSION = "3.14.29"
+
 BOX_BRAND = "mecool"
 
 require conf/distro/multilib.inc
@@ -7,7 +9,7 @@ KERNEL_FILE = "kernel.itb"
 ROOTFS_FILE = "rootfs.tar.bz2"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-amlogic"
-PREFERRED_VERSION_linux-amlogic = "3.14.29"
+PREFERRED_VERSION_linux-amlogic = "${KERNELVERSION}"
 
 MACHINEKERNEL = "amlogic"
 

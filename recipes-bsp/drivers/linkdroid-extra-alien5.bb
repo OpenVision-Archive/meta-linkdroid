@@ -10,7 +10,7 @@ COMPATIBLE_MACHINE = "^(alien5)$"
 
 DEPENDS = "virtual/${TARGET_PREFIX}gcc"
 
-KV = "3.14.29"
+KV = "${KERNELVERSION}"
 SRCDATE = "20180314"
 
 PV = "${KV}+${SRCDATE}"

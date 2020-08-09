@@ -17,11 +17,11 @@ SRCDATE = "20181012"
 SRC_URI[md5sum] = "d1ece449534a587487f2589e68e6f01b"
 SRC_URI[sha256sum] = "21b281fc26a15a5397083049e9e0805c8e62c68f733a3aee6ddb45533fe971f6"
 
-SRC_URI += "http://source.mynonpublic.com/linkdroid/linux-${PV}-${SRCDATE}.tar.gz \
-    file://defconfig \
-    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
-    file://${MACHINE}.dts \
-"
+SRC_URI = "http://source.mynonpublic.com/linkdroid/linux-${PV}-${SRCDATE}.tar.gz \
+	file://defconfig \
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	file://${MACHINE}.dts \
+	"
 
 S = "${WORKDIR}/common"
 B = "${WORKDIR}/build"

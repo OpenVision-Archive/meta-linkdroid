@@ -10,7 +10,7 @@ DEPENDS = "virtual/${TARGET_PREFIX}gcc"
 
 require conf/license/license-gplv2.inc
 
-KV = "3.14.29"
+KV = "${KERNELVERSION}"
 SRCDATE = "20180513"
 
 PV = "${KV}+${SRCDATE}"
