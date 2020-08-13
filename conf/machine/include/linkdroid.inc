@@ -113,3 +113,5 @@ IMAGE_CMD_amlogicsdimg_append = " \
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 EXTRA_ALSA = "aml905d"
+
+RCNAME = "amiko3"

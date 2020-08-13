@@ -113,3 +113,5 @@ IMAGE_CMD_amlogicsdimg_append = " \
 
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
+
+RCNAME ?= "k1pro"
