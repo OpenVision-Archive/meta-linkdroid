@@ -31,7 +31,7 @@ do_install () {
 }
 
 FILES_${PN} += "${sysconfdir}/modules-load.d/amlnftldev.conf"
-FILES_${PN} += "${base_libdir}/modules/${KV}/extra"
+FILES_${PN} += "${nonarch_base_libdir}/modules/${KV}/extra"
 
 do_package_qa() {
 }
