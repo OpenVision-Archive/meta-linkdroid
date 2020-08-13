@@ -27,7 +27,7 @@ do_install() {
     install -d ${D}${includedir}/amlogic/amadec/system
     install -d ${D}${libdir}
     install -m 0755 ${S}/include/*.h ${D}${includedir}/amlogic/amadec/
-    install -m 0755 ${WORKDIR}/libamadec.so ${D}/${libdir}/
+    install -m 0755 ${WORKDIR}/libamadec.so ${D}${libdir}/
     install -m 0644 ${WORKDIR}/libamadec.pc ${D}${libdir}/pkgconfig/
 }
 

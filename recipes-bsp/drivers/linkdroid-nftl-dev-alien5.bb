@@ -26,8 +26,8 @@ do_compile() {
 do_install () {
     install -d ${D}${nonarch_base_libdir}/modules/${KV}/kernel/drivers/extra
     install -m 0644 ${S}/aml_nftl_dev.ko ${D}${nonarch_base_libdir}/modules/${KV}/kernel/drivers/extra/
-    install -d ${D}/${sysconfdir}/modules-load.d
-    echo "aml_nftl_dev" > ${D}/${sysconfdir}/modules-load.d/amlnftldev.conf
+    install -d ${D}${sysconfdir}/modules-load.d
+    echo "aml_nftl_dev" > ${D}${sysconfdir}/modules-load.d/amlnftldev.conf
 }
 
 FILES_${PN} += "${sysconfdir}/modules-load.d/amlnftldev.conf"
