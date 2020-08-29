@@ -60,6 +60,8 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	linkdroid-libavlib-audio-so-${MACHINE} \
 	linkdroid-dvb-modules-${MACHINE} \
 	linkdroid-extra-${MACHINE} \
+	linkdroid-lkdosth \
+	amlogic-cnim \
 	"
 	
 KERNEL_MODULE_AUTOLOAD += "\
@@ -76,11 +78,6 @@ KERNEL_MODULE_AUTOLOAD += "\
 	rc-core \
 	cfg80211 \
 	8189es \
-	"
-
-MACHINE_EXTRA_RRECOMMENDS += "\
-	linkdroid-lkdosth \
-	amlogic-cnim \
 	"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
