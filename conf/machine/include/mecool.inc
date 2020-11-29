@@ -99,17 +99,21 @@ DEPENDS_append_pn-showiframe = " mecool-libamcodec gstreamer1.0 gstreamer1.0-lib
 DISTRO_FEATURES_remove += "x11 wayland"
 
 IMAGE_CMD_amlogicsdimg_append = " \
-    mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
-    mv ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${IMAGE_NAME}.img; \
-    cp ${DEPLOY_DIR_IMAGE}/${KERNEL_DEVICETREE} ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/dtb.img; \
-    echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
-    cd ${DEPLOY_DIR_IMAGE}; \
-    zip ${IMAGE_NAME}_sdcard.zip ${IMAGEDIR}/*; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
-    rm -f ${DEPLOY_DIR_IMAGE}/*.img; \
-    rm -Rf ${IMAGEDIR}; \
-    "
+	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
+	mv ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${IMAGE_NAME}.img; \
+	cp ${DEPLOY_DIR_IMAGE}/${KERNEL_DEVICETREE} ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/dtb.img; \
+	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
+	cd ${DEPLOY_DIR_IMAGE}; \
+	zip ${IMAGE_NAME}_sdcard.zip ${IMAGEDIR}/*; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.img; \
+	rm -Rf ${IMAGEDIR}; \
+	"
+
+IMAGE_CMD_prepend = "\
+	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
+	"
 
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
