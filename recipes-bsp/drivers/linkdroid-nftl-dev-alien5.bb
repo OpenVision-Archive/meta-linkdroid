@@ -30,8 +30,7 @@ do_install () {
     echo "aml_nftl_dev" > ${D}${sysconfdir}/modules-load.d/amlnftldev.conf
 }
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/amlnftldev.conf"
-FILES_${PN} += "${nonarch_base_libdir}/modules/${KV}/extra"
+FILES_${PN} += "${sysconfdir}/modules-load.d/amlnftldev.conf ${nonarch_base_libdir}/modules/${KV}/extra"
 
 do_package_qa() {
 }
