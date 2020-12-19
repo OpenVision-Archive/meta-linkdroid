@@ -71,7 +71,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	"
 
 KERNEL_MODULE_AUTOLOAD += "\
-	e2_procfs \
 	mali \
 	dhd \
 	aml \
