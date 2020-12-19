@@ -22,10 +22,10 @@ do_install() {
     install -m 0644 ${WORKDIR}/libamplayer.pc ${D}${libdir}/pkgconfig/
 
     install -d ${D}${includedir}/player
-    cp -pR  ${S}/player/include/*.h ${D}${includedir}/player
+    cp -fpR  ${S}/player/include/*.h ${D}${includedir}/player
 
     install -d ${D}${includedir}/amlogic/player
-    cp -pR  ${S}/player/include/*.h ${D}${includedir}/amlogic/player
+    cp -fpR  ${S}/player/include/*.h ${D}${includedir}/amlogic/player
 
     install -d ${D}${libdir}
     install -m 0755 ${S}/*.so ${D}${libdir}

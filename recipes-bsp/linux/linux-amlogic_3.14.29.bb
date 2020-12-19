@@ -45,7 +45,7 @@ do_compile_append() {
     	done
     	# Create directory, this is needed for out of tree builds
     	mkdir -p ${B}/arch/arm64/boot/dts/amlogic/
-    	cp ${B}/arch/arm64/boot/dts/amlogic/${KERNEL_DEVICETREE} ${B}/arch/arm64/boot/
+    	cp -f ${B}/arch/arm64/boot/dts/amlogic/${KERNEL_DEVICETREE} ${B}/arch/arm64/boot/
     fi
 }
 

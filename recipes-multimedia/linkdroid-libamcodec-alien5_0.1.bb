@@ -26,8 +26,8 @@ do_install() {
     install -m 0644 ${S}/libamcodec.pc ${D}${libdir}/pkgconfig/
     install -d ${D}${includedir}/amlogic/amcodec
     install -d ${D}${includedir}/amcodec
-    cp -pR ${S}/include/* ${D}${includedir}/amlogic/amcodec
-    cp -pR ${S}/include/* ${D}${includedir}/amcodec
+    cp -fpR ${S}/include/* ${D}${includedir}/amlogic/amcodec
+    cp -fpR ${S}/include/* ${D}${includedir}/amcodec
     install -d ${D}${libdir}
     install -m 0755  ${S}/libamcodec.so.0.0  ${D}${libdir}/
     cd ${D}${libdir}

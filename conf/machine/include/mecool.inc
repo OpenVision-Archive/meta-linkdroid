@@ -101,7 +101,7 @@ DISTRO_FEATURES_remove += "x11 wayland"
 IMAGE_CMD_amlogicsdimg_append = " \
 	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
 	mv ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${IMAGE_NAME}.img; \
-	cp ${DEPLOY_DIR_IMAGE}/${KERNEL_DEVICETREE} ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/dtb.img; \
+	cp -f ${DEPLOY_DIR_IMAGE}/${KERNEL_DEVICETREE} ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/dtb.img; \
 	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	cd ${DEPLOY_DIR_IMAGE}; \
