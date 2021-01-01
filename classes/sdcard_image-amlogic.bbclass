@@ -11,8 +11,6 @@ IMAGE_ROOTFS_ALIGNMENT = "4096"
 SDIMG_ROOTFS_TYPE ?= "ext4"
 SDIMG_ROOTFS = "${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.${SDIMG_ROOTFS_TYPE}"
 
-do_image_amlogicsdimg[vardepsexclude] = "DATETIME"
-
 do_image_amlogicsdimg[depends] += " \
 			parted-native:do_populate_sysroot \
 			mtools-native:do_populate_sysroot \

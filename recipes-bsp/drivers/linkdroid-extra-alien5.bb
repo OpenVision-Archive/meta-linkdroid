@@ -30,4 +30,4 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN} += "${nonarch_base_libdir}/modules/${KV}/extra"
+FILES_${PN} += "${nonarch_base_libdir}/modules"

@@ -189,10 +189,6 @@ fitimage_assemble() {
 			dtbcount=`expr ${dtbcount} + 1`
 		done
 	fi
-	if [ "x${ramdiskcount}" = "x1" ] ; then
-		copy_initramfs
-		fitimage_emit_section_ramdisk ${1} "${ramdiskcount}" usr/${INITRAMFS_IMAGE}-${MACHINE}.cpio
-	fi
 
 	fitimage_emit_section_maint ${1} sectend
 
@@ -237,25 +233,23 @@ do_assemble_fitimage_initramfs() {
 
 addtask assemble_fitimage_initramfs before do_deploy after do_install
 
-
-kernel_do_deploy[vardepsexclude] = "DATETIME"
 kernel_do_deploy_append() {
 	if test "x${KERNEL_IMAGETYPE}" = "xfitImage" ; then
 		cd ${B}
 		echo "Copying fit-image.its source file..."
-		its_base_name="fitImage-its-${PV}-${PR}-${MACHINE}-${DATETIME}"
+		its_base_name="fitImage-its-${PV}-${PR}-${MACHINE}"
 		its_symlink_name=fitImage-its-${MACHINE}
 		install -m 0644 fit-image.its ${DEPLOYDIR}/${its_base_name}.its
-		linux_bin_base_name="fitImage-linux.bin-${PV}-${PR}-${MACHINE}-${DATETIME}"
+		linux_bin_base_name="fitImage-linux.bin-${PV}-${PR}-${MACHINE}"
 		linux_bin_symlink_name=fitImage-linux.bin-${MACHINE}
 		install -m 0644 linux.bin ${DEPLOYDIR}/${linux_bin_base_name}.bin
 
 		if [ -n "${INITRAMFS_IMAGE}" ]; then
 			echo "Copying fit-image-${INITRAMFS_IMAGE}.its source file..."
-			its_initramfs_base_name="${KERNEL_IMAGETYPE}-its-${INITRAMFS_IMAGE}-${PV}-${PR}-${MACHINE}-${DATETIME}"
+			its_initramfs_base_name="${KERNEL_IMAGETYPE}-its-${INITRAMFS_IMAGE}-${PV}-${PR}-${MACHINE}"
 			its_initramfs_symlink_name=${KERNEL_IMAGETYPE}-its-${INITRAMFS_IMAGE}-${MACHINE}
 			install -m 0644 fit-image-${INITRAMFS_IMAGE}.its ${DEPLOYDIR}/${its_initramfs_base_name}.its
-			fit_initramfs_base_name="${KERNEL_IMAGETYPE}-${INITRAMFS_IMAGE}-${PV}-${PR}-${MACHINE}-${DATETIME}"
+			fit_initramfs_base_name="${KERNEL_IMAGETYPE}-${INITRAMFS_IMAGE}-${PV}-${PR}-${MACHINE}"
 			fit_initramfs_symlink_name=${KERNEL_IMAGETYPE}-${INITRAMFS_IMAGE}-${MACHINE}
 			install -m 0644 arch/${ARCH}/boot/fitImage-${INITRAMFS_IMAGE} ${DEPLOYDIR}/${fit_initramfs_base_name}.bin
 		fi
