@@ -37,10 +37,10 @@ do_install() {
     install -d ${D}${includedir}/amlogic/amcodec/amports
     install -m 0755 ${S}/include/amports/*.h ${D}${includedir}/amlogic/amcodec/amports
 
-    install -d ${D}${includedir}//amlogic/amcodec/ppmgr
+    install -d ${D}${includedir}/amlogic/amcodec/ppmgr
     install -m 0755 ${S}/include/ppmgr/*.h ${D}${includedir}/amlogic/amcodec/ppmgr
 
-    install -d ${D}${includedir}//amlogic/amcodec/yuvplayer
+    install -d ${D}${includedir}/amlogic/amcodec/yuvplayer
     install -m 0755 ${S}/include/yuvplayer/*.h ${D}${includedir}/amlogic/amcodec/yuvplayer
 
     install -d ${D}${libdir}
