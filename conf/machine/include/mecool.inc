@@ -91,7 +91,6 @@ DEPENDS_append_pn-enigma2 = " libdvbcsa mecool-libamcodec mecool-libamadec gstre
 EXTRA_OECONF_append_pn-tuxtxt-enigma2 = " --with-fbdev=/dev/fb0"
 DEPENDS_append_pn-enigma2-plugin-systemplugins-servicemp3 = " mecool-libamcodec "
 CC_append_pn-showiframe = " -DHAVE_AMLOGIC -I${STAGING_INCDIR}/amlogic/amcodec -lamcodec -lgstpbutils-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0"
-DEPENDS_append_pn-showiframe = " mecool-libamcodec gstreamer1.0 gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
 
 DISTRO_FEATURES_remove += "x11 wayland"
 
