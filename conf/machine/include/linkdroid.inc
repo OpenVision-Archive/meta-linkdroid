@@ -2,8 +2,6 @@ KERNELVERSION = "3.14.29"
 
 BOX_BRAND = "linkdroid"
 
-require conf/distro/multilib.inc
-
 SOC_FAMILY = "aml905d"
 
 KERNEL_DEVICETREE = "alien5.dtb"
@@ -39,7 +37,7 @@ UBOOT_LOADADDRESS = "0x01080000"
 
 INITRAMFS_IMAGE = "amlogic-initramfs"
 
-MACHINE_FEATURES += "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma multilib HDMI AV_JACK vfdsymbol"
+MACHINE_FEATURES += "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma HDMI AV_JACK vfdsymbol"
 
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
