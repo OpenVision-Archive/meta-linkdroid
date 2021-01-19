@@ -20,11 +20,12 @@ do_image_amlogicsdimg[depends] += " \
 "
 
 SDIMG = "${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.img"
+DTBFILE = "${DEPLOY_DIR_IMAGE}/dtb.img"
 
 FATPAYLOAD ?= ""
 
 IMAGE_CMD_amlogicsdimg () {
-
+	rm -f ${WORKDIR}/boot.img
 	BOOT_SPACE_ALIGNED=$(expr ${BOOT_SPACE} + ${IMAGE_ROOTFS_ALIGNMENT} - 1)
 	BOOT_SPACE_ALIGNED=$(expr ${BOOT_SPACE_ALIGNED} - ${BOOT_SPACE_ALIGNED} % ${IMAGE_ROOTFS_ALIGNMENT})
 	ROOTFS_SIZE=`du -bks ${SDIMG_ROOTFS} | awk '{print $1}'`
@@ -59,6 +60,8 @@ IMAGE_CMD_amlogicsdimg () {
 
 	echo "${IMAGE_NAME}" > ${WORKDIR}/image-version-info
 	mcopy -i ${WORKDIR}/boot.img -v ${WORKDIR}/image-version-info ::
+
+	mcopy -i ${WORKDIR}/boot.img -v ${DTBFILE} ::
 
 	dd if=${WORKDIR}/boot.img of=${SDIMG} conv=notrunc seek=1 bs=$(expr ${IMAGE_ROOTFS_ALIGNMENT} \* 1024) && sync && sync
 	tune2fs -L  ROOTFS ${SDIMG_ROOTFS}
