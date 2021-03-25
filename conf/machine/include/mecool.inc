@@ -44,6 +44,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	amlogic-shutdown \
 	amlogic-u-boot-fw-utils \
 	amremote \
+	firmware-rpi \
 	kernel-module-e2-procfs \
 	kernel-modules \
 	libmad \
@@ -65,7 +66,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	mecool-libpcm \
 	mecool-libraac \
 	mecool-setup \
-	rpi-firmwares \
 	"
 
 KERNEL_MODULE_AUTOLOAD += "\
