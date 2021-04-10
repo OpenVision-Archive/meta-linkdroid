@@ -20,8 +20,8 @@ S = "${WORKDIR}"
 do_install () {
     install -d ${D}${bindir}
     install -m 0755 ${WORKDIR}/lkdosth ${D}${bindir}/
-    install -d ${D}${sysconfdir}/init.d/
-    install -m 0755 ${WORKDIR}/lkdosth.init ${D}${sysconfdir}/init.d/${PN}
+    install -d ${D}${INIT_D_DIR}/
+    install -m 0755 ${WORKDIR}/lkdosth.init ${D}${INIT_D_DIR}/${PN}
 }
 
 FILES_${PN} = "${bindir} ${sysconfdir}"

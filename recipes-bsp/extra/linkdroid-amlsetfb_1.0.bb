@@ -21,7 +21,7 @@ SRC_URI = " \
 "
 
 do_install() {
-    install -d ${D}${sysconfdir}/init.d
-    install -m 0755 ${WORKDIR}/amlsetfb  ${D}${sysconfdir}/init.d/amlsetfb
-    install -m 0755 ${WORKDIR}/aaa  ${D}${sysconfdir}/init.d/aaa
+    install -d ${D}${INIT_D_DIR}
+    install -m 0755 ${WORKDIR}/amlsetfb  ${D}${INIT_D_DIR}/amlsetfb
+    install -m 0755 ${WORKDIR}/aaa  ${D}${INIT_D_DIR}/aaa
 }

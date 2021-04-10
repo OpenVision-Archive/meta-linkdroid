@@ -21,6 +21,6 @@ SRC_URI = " \
 "
 
 do_install() {
-    install -d ${D}${sysconfdir}/init.d
-    install -m 0755 ${WORKDIR}/mecool-setup  ${D}${sysconfdir}/init.d/mecool-setup
+    install -d ${D}${INIT_D_DIR}
+    install -m 0755 ${WORKDIR}/mecool-setup  ${D}${INIT_D_DIR}/mecool-setup
 }

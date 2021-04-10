@@ -15,8 +15,8 @@ S = "${WORKDIR}"
 inherit pkgconfig update-rc.d
 
 do_install() {
-    install -d ${D}${sysconfdir}/init.d/
-    install -m 0755 ${WORKDIR}/shutdown.sh ${D}${sysconfdir}/init.d/${PN}
+    install -d ${D}${INIT_D_DIR}/
+    install -m 0755 ${WORKDIR}/shutdown.sh ${D}${INIT_D_DIR}/${PN}
     install -d ${D}${bindir}
     install -m 0755 ${WORKDIR}/amlreboot ${D}${bindir}/
     install -m 0755 ${WORKDIR}/amlhalt ${D}${bindir}/
