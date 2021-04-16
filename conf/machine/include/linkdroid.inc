@@ -39,7 +39,6 @@ INITRAMFS_IMAGE = "amlogic-initramfs"
 
 MACHINE_FEATURES += "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma HDMI AV_JACK vfdsymbol"
 
-DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	amlogic-mali \
