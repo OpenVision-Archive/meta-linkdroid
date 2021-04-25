@@ -58,6 +58,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	linkdroid-extra-${MACHINE} \
 	linkdroid-lkdosth \
 	amlogic-cnim \
+	kernel-module-extrawlan-rtl8189es \
 	"
 	
 KERNEL_MODULE_AUTOLOAD += "\
