@@ -37,7 +37,7 @@ UBOOT_LOADADDRESS = "0x01080000"
 
 INITRAMFS_IMAGE = "amlogic-initramfs"
 
-MACHINE_FEATURES += "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma HDMI AV_JACK vfdsymbol"
+MACHINE_FEATURES += "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nogamma HDMI AV_JACK vfdsymbol kodi17"
 
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
@@ -114,3 +114,7 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 EXTRA_ALSA = "aml905d"
 
 RCNAME = "amiko3"
+
+PREFERRED_PROVIDER_virtual/libgles1 ?= "am-opengl-amlogic"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "am-opengl-amlogic"
+PREFERRED_PROVIDER_virtual/egl ?= "am-opengl-amlogic"
