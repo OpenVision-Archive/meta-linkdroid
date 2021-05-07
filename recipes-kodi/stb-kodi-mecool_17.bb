@@ -5,7 +5,7 @@ RPROVIDES_${PN} += "virtual/kodi"
 PROVIDES += "kodi"
 RPROVIDES_${PN} += "kodi"
 
-DEPENDS_append = " mecool-libamadec mecool-libamcodec mecool-libamavutils"
+DEPENDS_append = " amlogic-libamadec amlogic-libamcodec amlogic-libamavutils"
 
 EXTRA_OECONF += " \
     --with-platform=aml-aarch64 \

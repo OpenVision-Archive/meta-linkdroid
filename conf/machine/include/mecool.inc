@@ -38,6 +38,20 @@ MACHINE_FEATURES += "bluetooth usbhost vfat alsa dvb-c nolcd hdmicec fb emmc nog
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	amlogic-autoscript \
+	amlogic-libadpcm \
+	amlogic-libamadec \
+	amlogic-libamavutils \
+	amlogic-libamcodec \
+	amlogic-libamplayer \
+	amlogic-libamr \
+	amlogic-libape \
+	amlogic-libcook \
+	amlogic-libfaad \
+	amlogic-libflac \
+	amlogic-liblpcm \
+	amlogic-libmad \
+	amlogic-libpcm \
+	amlogic-libraac \
 	amlogic-mali \
 	amlogic-shutdown \
 	amlogic-u-boot-fw-utils \
@@ -49,20 +63,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	mecool-amlsetfb \
 	mecool-gst-amlavsink1 \
 	mecool-dvb-modules-e2procfs \
-	mecool-libadpcm \
-	mecool-libamadec \
-	mecool-libamavutils \
-	mecool-libamcodec \
-	mecool-libamplayer \
-	mecool-libamr \
-	mecool-libape \
-	mecool-libcook \
-	mecool-libfaad \
-	mecool-libflac \
-	mecool-liblpcm \
-	mecool-libmad \
-	mecool-libpcm \
-	mecool-libraac \
 	mecool-setup \
 	"
 
@@ -85,11 +85,11 @@ DVBMEDIASINK_CONFIG = "--with-wmv --with-pcm --with-eac3 --with-h265 --with-dtsd
 
 CC_append_pn-enigma2 = " -I${STAGING_INCDIR}/amlogic/amcodec -lamcodec"
 EXTRA_OECONF_append_pn-enigma2 = " --with-alsa --with-alsacard=hw:0 --with-alsamixer=Master --with-fbdev=/dev/fb0 --with-lcddev=/dev/null --with-amlogic"
-DEPENDS_append_pn-enigma2 = " libdvbcsa mecool-libamcodec mecool-libamadec gstreamer1.0 gstreamer1.0-plugins-base"
+DEPENDS_append_pn-enigma2 = " libdvbcsa amlogic-libamcodec amlogic-libamadec gstreamer1.0 gstreamer1.0-plugins-base"
 EXTRA_OECONF_append_pn-tuxtxt-enigma2 = " --with-fbdev=/dev/fb0"
-DEPENDS_append_pn-enigma2-plugin-systemplugins-servicemp3 = " mecool-libamcodec "
+DEPENDS_append_pn-enigma2-plugin-systemplugins-servicemp3 = " amlogic-libamcodec "
 CC_append_pn-showiframe = " -DHAVE_AMLOGIC -I${STAGING_INCDIR}/amlogic/amcodec -lamcodec -lgstpbutils-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0"
-DEPENDS_append_pn-showiframe = " mecool-libamcodec gstreamer1.0 gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
+DEPENDS_append_pn-showiframe = " amlogic-libamcodec gstreamer1.0 gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
 
 DISTRO_FEATURES_remove += "x11 wayland"
 

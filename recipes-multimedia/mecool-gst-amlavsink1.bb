@@ -13,7 +13,7 @@ inherit lib_package pkgconfig autotools
 ### TODO:
 ## cram plugins as did not have time to check which ones provide gst/video headers 
 ## QA still complains about host headers used, does not make any sense
-DEPENDS = " gstreamer1.0 mecool-libamcodec mecool-libamavutils mecool-libamplayer gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
+DEPENDS = " gstreamer1.0 amlogic-libamcodec amlogic-libamavutils amlogic-libamplayer gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly"
 
 SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/amlogic-libs/master/gst-aml-plugins-1.0.tar.xz"
 
