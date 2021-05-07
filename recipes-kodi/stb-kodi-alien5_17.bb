@@ -9,7 +9,7 @@ DEPENDS_append = " linkdroid-libamadec-${MACHINE} linkdroid-libamcodec-${MACHINE
 
 EXTRA_OECONF += " \
     --with-platform=aml-aarch64 \
-    --with-ffmpeg=stb\
+    --with-ffmpeg=stb \
 "
 
 COMPATIBLE_MACHINE = "^(alien5)$"
